@@ -5,7 +5,7 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--light);
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,13 +19,63 @@
 /* Card
 ###########################################################################  */
 
-.card{
-  width: 50%;
-  background-color: var(--lightest);
-  border-radius: var(--radius-m);
-  overflow: hidden;
-  box-shadow: var(--n-shadow-l);
+@media only screen and (max-width: 500px){
+  .card{
+    position: sticky;
+    top: 0;
+    font-size: clamp(10px,3vw,14px);
+    width: 50vw;
+    min-width: 300px;
+    max-width: 600px;
+    background-color: var(--lightest);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: var(--n-shadow-l);
+  }
+
+  h2{
+    font-size: clamp(25px,4vw,70px);
+    position: absolute;
+    top: 0;
+  }
 }
+
+@media only screen and (min-width: 501px){
+  .card{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    font-size: clamp(10px,3vw,14px);
+    width: 70vw;
+    min-width: 55vw;
+    background-color: var(--lightest);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: var(--n-shadow-l);
+  }
+
+  img{
+    width: 35vw;
+    object-fit: cover;
+  }
+
+  figcaption{
+    width: 48vw;
+    padding-right: 20px;
+  }
+
+  h2{
+    font-size: clamp(25px,4vw,60px);
+  }
+
+  
+}
+
+
+
+
 
 .card figcaption{
   padding: var(--l) var(--m) var(--xl) var(--m);
